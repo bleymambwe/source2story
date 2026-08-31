@@ -5,23 +5,48 @@ built for the micro1 Agentic Workflows Hackathon.
 
 ## Who this is for
 
-Solo and small-team creators making knowledge-heavy explainer videos — economics, tech,
-science, business, policy — from a written source (a report, paper, article, or dataset).
+People who have to **stand behind what they show**:
+
+- **Teachers** turning a textbook chapter, paper, or report into a 90-second explainer for
+  a lesson — and who are accountable to a room of students and their parents for every
+  number on screen.
+- **Students** building study aids or presentations from their own course readings, where a
+  hallucinated statistic doesn't just look bad, it teaches them something false.
+- **Creators** making knowledge-heavy explainers — economics, science, policy — whose
+  credibility is the entire product.
 
 ## The bottleneck
 
-Turning a dense source into a short, accurate, well-paced video eats hours: research,
-fact-checking, scripting, scene planning, and editing. Generic AI video tools make this
-*worse*, because they generate confident-sounding claims and visuals that aren't actually
-tied to the source — the creator ends up fact-checking the AI's output line by line, which
-can cost more time than writing it from scratch.
+The reason AI video hasn't landed in classrooms isn't that the videos look bad. **It's that
+nobody can vouch for them.**
+
+Turning a dense source into a short, accurate video already eats hours: research,
+fact-checking, scripting, scene planning, editing. Generic AI video tools appear to collapse
+that to minutes — but they generate confident-sounding claims and visuals that aren't
+actually tied to the source. So the human re-checks every line by hand before they dare show
+it to anyone, which costs *more* time than writing the script themselves. The tool that was
+supposed to save time added a verification chore instead.
+
+A teacher can't show a class a figure that might be wrong. A student can't cite it. That
+accountability gap — not visual quality — is what keeps these tools out of the places that
+would benefit most.
 
 ## What this solves
 
-Given a source document, produce a short narrated video where every factual statement and
+Given a source document, produce a short explainer video where every factual statement and
 every data visual is traceable to a specific place in the source — and anything that can't
-be verified is flagged instead of rendered, rather than the creator finding out after
-publishing.
+be verified is **visibly flagged instead of silently rendered**.
+
+### A blocked scene is a finding, not a failure
+
+The adversarial eval case (`eval/cases/revenue_conflict.txt`) states +24% growth on page 3
+and +17% for the same quarter on page 37. The baseline picks one and sounds certain.
+Source2Story refuses to render either, and says why, on screen.
+
+For a teacher, **that blocked scene is the lesson**: here is exactly where this source
+contradicts itself. The verification layer doubles as source criticism — it hands back a map
+of where the material is unreliable, which is the thing a student most needs to learn to see
+and the thing a rushed reader most often misses.
 
 Full design, rubric mapping, and what was deliberately cut for time: [`docs/architecture.md`](docs/architecture.md).
 

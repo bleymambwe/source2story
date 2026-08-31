@@ -25,15 +25,32 @@ renderable: ['s3']
 
 ## Hot take
 
-Verification mattered more than generation quality would have. A better-written script
-still states an unverifiable number with total confidence — better prompting doesn't fix
-that, because the model has no way to know a number is contested unless something
-explicitly checks it against the source. The fix that actually worked was cheap and
-non-LLM: a programmatic existence/conflict check catches the two most damaging failure
-modes (citing a claim that doesn't exist, citing a claim two source passages disagree
-about) before any semantic judgment call is needed. If we'd spent the available time
-tuning the script-writing prompt instead of building this check, the confidently-wrong
-24%-revenue scene would still be sitting in the final video.
+**Verification mattered more than generation quality — and the most useful output the agent
+produced was a refusal.**
+
+A better-written script still states an unverifiable number with total confidence. Better
+prompting cannot fix that, because the model has no way to know a figure is contested unless
+something explicitly checks it against the source. The fix that actually worked was cheap
+and needed no model call at all: a programmatic existence/conflict check catches the two
+most damaging failure modes (citing a claim that doesn't exist; citing a claim two source
+passages disagree about) before any semantic judgment is involved. If the available time had
+gone into tuning the script-writing prompt instead of building that check, the
+confidently-wrong 24%-revenue scene would still be in the final video.
+
+The second, less obvious lesson: **we built the blocked scene as an error state and it turned
+out to be the product.** The intended output was "a video with the bad scene removed." What
+the pipeline actually produces is a video plus a map of exactly where the source
+contradicts itself — page 3 versus page 37, stated on screen. For the teacher and student
+users this targets, that map is worth more than the polished scene it replaced: it's the
+raw material for teaching source criticism, and it's precisely what a rushed human reader
+skims past. If building this again, the flagged output would be designed as a first-class
+deliverable from the start — an exportable "source reliability report" alongside the video —
+rather than treated as the failure branch of the render path.
+
+What that changes about what to build next: stop optimizing agents purely for producing
+clean artifacts, and start treating their well-grounded *uncertainty* as shippable output.
+An agent that says "these two pages disagree and here's the citation for both" is doing
+something a confident agent structurally cannot.
 
 ## What's discarded
 
