@@ -1,0 +1,59 @@
+{
+  "title": "Q3 Results — Baseline",
+  "scenes": [
+    {
+      "scene_id": "s1",
+      "narration": "This quarter, the company posted strong results.",
+      "visual_type": "kinetic_type",
+      "visual_prompt": "Strong quarter",
+      "status": "verified",
+      "duration_s": 4
+    },
+    {
+      "scene_id": "s2",
+      "narration": "Revenue increased 24% year-over-year.",
+      "visual_type": "factual_chart",
+      "visual_prompt": "Revenue growth",
+      "value": "24",
+      "unit": "%",
+      "status": "verified",
+      "duration_s": 5
+    },
+    {
+      "scene_id": "s3",
+      "narration": "The hardware segment grew 21%.",
+      "visual_type": "factual_chart",
+      "visual_prompt": "Hardware segment growth",
+      "value": "21",
+      "unit": "%",
+      "status": "verified",
+      "duration_s": 5
+    },
+    {
+      "scene_id": "s4",
+      "narration": "Subscription services grew 31% year-over-year.",
+      "visual_type": "factual_chart",
+      "visual_prompt": "Subscription segment growth",
+      "value": "31",
+      "unit": "%",
+      "status": "verified",
+      "duration_s": 5
+    },
+    {
+      "scene_id": "s5",
+      "narration": "Momentum looks strong heading into next quarter.",
+      "visual_type": "kinetic_type",
+      "visual_prompt": "Strong momentum ahead",
+      "status": "verified",
+      "duration_s": 4
+    },
+    {
+      "scene_id": "s6",
+      "narration": "",
+      "visual_type": "transition",
+      "visual_prompt": "Source2Story — Baseline",
+      "status": "verified",
+      "duration_s": 3
+    }
+  ]
+}

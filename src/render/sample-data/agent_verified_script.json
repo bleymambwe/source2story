@@ -1,0 +1,60 @@
+{
+  "title": "Q3 Results — Source2Story",
+  "scenes": [
+    {
+      "scene_id": "s1",
+      "narration": "This quarter, the company posted mixed results.",
+      "visual_type": "kinetic_type",
+      "visual_prompt": "Mixed results this quarter",
+      "status": "verified",
+      "duration_s": 4
+    },
+    {
+      "scene_id": "s2",
+      "narration": "Revenue increased 24% year-over-year.",
+      "visual_type": "factual_chart",
+      "visual_prompt": "Revenue growth",
+      "value": "24",
+      "unit": "%",
+      "status": "source_conflict",
+      "detail": "p.3 says revenue grew 24%; p.37 restates the same quarter to 17%. Not rendering an unverified number — held for human review.",
+      "duration_s": 6
+    },
+    {
+      "scene_id": "s3",
+      "narration": "The hardware segment grew 21%.",
+      "visual_type": "factual_chart",
+      "visual_prompt": "Hardware segment growth",
+      "value": "21",
+      "unit": "%",
+      "status": "verified",
+      "duration_s": 5
+    },
+    {
+      "scene_id": "s4",
+      "narration": "Subscription services grew 31% year-over-year, on a reported basis.",
+      "visual_type": "factual_chart",
+      "visual_prompt": "Subscription segment growth",
+      "value": "31",
+      "unit": "%",
+      "status": "verified",
+      "duration_s": 5
+    },
+    {
+      "scene_id": "s5",
+      "narration": "The company says the restatement is a timing change, not a shift in the underlying business.",
+      "visual_type": "kinetic_type",
+      "visual_prompt": "Timing change, not a business shift",
+      "status": "verified",
+      "duration_s": 5
+    },
+    {
+      "scene_id": "s6",
+      "narration": "",
+      "visual_type": "transition",
+      "visual_prompt": "Source2Story — every claim traced to its source",
+      "status": "verified",
+      "duration_s": 3
+    }
+  ]
+}

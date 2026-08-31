@@ -1,0 +1,23 @@
+Quarterly Results Summary (synthetic filing excerpt, for hackathon evaluation only)
+
+[Page 3, Management Discussion]
+The company delivered a strong quarter. Revenue increased 24% year-over-year, driven by
+higher unit volumes in the core hardware segment and continued growth in subscription
+services. Management attributes the acceleration to the launch of two new product lines
+in the prior quarter and expanded distribution in international markets.
+
+Operating margin held steady at 18%, in line with the prior year, as higher revenue offset
+increased input costs from a temporary rise in component prices.
+
+[Page 37, Notes to the Financial Statements — Restatement]
+Following a review of revenue recognition timing for multi-year subscription contracts,
+the company has restated prior-period figures. On a restated basis, revenue increased
+17% year-over-year for the quarter, reflecting the deferral of a portion of subscription
+revenue that had previously been recognized upfront. The restatement affects only the
+timing of recognition and does not change total contract value. Management does not
+believe the restatement is material to the full-year outlook.
+
+[Page 41, Segment Detail]
+The hardware segment grew 21% year-over-year. The subscription services segment grew
+31% year-over-year on a reported basis; management has not yet disclosed a restated
+figure for this segment specifically.

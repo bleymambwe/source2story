@@ -1,0 +1,23 @@
+Copper and the Electric Vehicle Transition (synthetic briefing note, for hackathon evaluation only)
+
+Copper is a core input for electric vehicles: an average battery-electric vehicle uses
+roughly 83 kilograms of copper, compared to about 23 kilograms in a conventional
+internal-combustion vehicle, because of the electric motor windings, battery
+interconnects, and charging infrastructure.
+
+Global refined copper demand from the automotive sector was approximately 2.8 million
+tonnes in 2024. Industry analysts project this could rise to approximately 4.6 million
+tonnes by 2030 if electric vehicle adoption continues at its current trajectory, driven
+primarily by growth in China, the European Union, and the United States.
+
+Zambia is Africa's second-largest copper producer. National output reached 820,000
+tonnes in 2024, according to the country's Ministry of Mines and Minerals Development,
+up from 763,000 tonnes in 2023. The government has stated a target of reaching 3 million
+tonnes of annual copper production by 2031 through new mine investment and the
+reopening of previously idled sites.
+
+Analysts note that reaching this target depends on sustained foreign investment, stable
+electricity supply for processing plants, and continued access to export infrastructure
+through regional rail and port corridors. A prolonged drought in 2024 reduced
+hydroelectric output and forced several mines to curtail production for part of the year,
+illustrating one of the risks to the growth trajectory.
