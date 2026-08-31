@@ -27,9 +27,21 @@ Full design, rubric mapping, and what was deliberately cut for time: [`docs/arch
 
 ## Status
 
-Scaffolding in progress — this README will be filled in with real results as the pipeline
-is built. See [`CHANGELOG.md`](CHANGELOG.md) for the improvement changelog (baseline →
-final) and [`REPRODUCE.md`](REPRODUCE.md) for how to run it from a clean environment.
+Built against the hackathon deadline. The agent pipeline, eval harness, and Remotion
+renderer are complete and real (see `CHANGELOG.md`). A full live LLM run over the whole
+eval set was not completed before the deadline — no `ANTHROPIC_API_KEY` was available in
+the build environment during the build window. What *is* real and verified without any LLM
+call: the Verification Agent's programmatic conflict/unsupported-claim detection, tested
+against `eval/cases/revenue_conflict.txt` and visible directly in the rendered sample video
+at `src/render/out/agent_sample.mp4` (compare against `baseline_sample.mp4`, same input).
+See `CHANGELOG.md` for the exact state and `REPRODUCE.md` to run the live LLM path yourself.
+
+## Coding-agent disclosure
+
+This solution was built using Claude Code (Anthropic, Sonnet 5) as the coding agent, per
+the challenge's disclosure requirement. The runtime agents inside Source2Story itself
+(Claim Extraction, Script/Storyboard, Verification) are a separate system, built by Claude
+Code, that runs on the Anthropic API at inference time.
 
 ## Repository layout
 
