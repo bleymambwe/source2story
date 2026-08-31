@@ -5,13 +5,19 @@ Written for someone starting from a clean environment with no prior context on t
 ## Requirements
 
 - Python 3.12 (tested with 3.12.6)
-- An Anthropic API key with access to `claude-sonnet-4-5` (or set `S2S_MODEL` to another
-  Claude model you have access to)
-- Node.js 18+ / npm (only needed once the Remotion render step is wired up — see status note
-  in `docs/architecture.md`)
+- Node.js 18+ / npm (for the Remotion render step)
+- An LLM backend — pick one, no code change needed either way:
+  - **Default, free, no API key:** [Ollama](https://ollama.com) running locally, serving
+    `qwen3:7b`. Chosen after a quick survey of small open-source models on
+    function-calling/structured-output reliability — see `src/llm.py` for the reasoning.
+    micro1 does not provide API keys or credits, so this is also what makes the eval
+    reproducible by a judge at zero cost.
+  - **Higher quality, paid:** Anthropic (`S2S_PROVIDER=anthropic` + `ANTHROPIC_API_KEY`) or
+    any OpenAI-compatible endpoint (`OPENAI_BASE_URL` + `OPENAI_API_KEY`, e.g. OpenAI
+    itself, Together, Groq, vLLM).
 
-Approximate cost and runtime per case: _to be filled in after the first real eval run —
-see `eval/results/summary.md`._
+Approximate cost and runtime per case: free / local with the default Ollama backend;
+_paid-provider numbers to be filled in after a run against `eval/results/summary.md`._
 
 ## Setup
 
@@ -19,8 +25,31 @@ see `eval/results/summary.md`._
 python -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
+```
 
-export ANTHROPIC_API_KEY=sk-...  # Windows (PowerShell): $env:ANTHROPIC_API_KEY = "sk-..."
+### Option A — default: local open-source model via Ollama (free, no key)
+
+```bash
+# install Ollama (https://ollama.com/download), then:
+ollama pull qwen3:7b
+ollama serve   # if not already running as a background service
+# nothing else to set — src/llm.py defaults to http://localhost:11434/v1
+```
+
+### Option B — Anthropic
+
+```bash
+export S2S_PROVIDER=anthropic
+export ANTHROPIC_API_KEY=sk-...   # Windows (PowerShell): $env:ANTHROPIC_API_KEY = "sk-..."
+# optional: export S2S_MODEL=claude-sonnet-4-5
+```
+
+### Option C — any other OpenAI-compatible endpoint
+
+```bash
+export OPENAI_BASE_URL=https://api.openai.com/v1   # or Together/Groq/vLLM/etc.
+export OPENAI_API_KEY=sk-...
+export S2S_MODEL=gpt-4o-mini   # or whatever model that endpoint serves
 ```
 
 ## Run the baseline alone

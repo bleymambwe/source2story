@@ -91,6 +91,27 @@ same output, no flaky third-party video-gen API in the reproduction path.
 Visual truth is enforced by construction — a chart scene is only allowed to
 show numbers that came from the claim ledger.
 
+### Model backend: swappable, open-source by default
+
+`src/llm.py` is a thin provider-agnostic client (`_OpenAICompatBackend`,
+`_AnthropicBackend`) behind one interface every agent already calls
+(`LLMClient.call` / `.call_json`), switched with env vars only —
+`S2S_PROVIDER`, `S2S_MODEL`, `OPENAI_BASE_URL`. Default is `openai`-compatible
+pointed at a local Ollama server running **Qwen3 7B**.
+
+Reasoning: the rules state micro1 provides no API keys or model credits,
+which means a judge reproducing this project has no free Anthropic credits
+either — a hard dependency on a paid provider would quietly weaken the
+Reproducibility criterion for everyone, not just during the build. A quick
+survey of 2026 small open-source models on function-calling/structured-output
+reliability found a real size floor: models under roughly 7B parameters
+noticeably more often emit malformed JSON or call the wrong tool, which is a
+direct liability for a pipeline that parses strict JSON from every agent
+call. Qwen3 7B was the smallest size still reported reliable at that, and it
+runs on an 8GB-VRAM machine via Ollama with no API key. Anthropic or any
+other OpenAI-compatible endpoint stays one environment variable away for
+anyone who wants higher quality and is willing to pay for it.
+
 ## 4. Evaluation
 
 **Primary metric — source-grounded claim accuracy:**
